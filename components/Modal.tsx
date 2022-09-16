@@ -17,7 +17,7 @@ function Modal() {
   const [trailer, setTrailer] = useState('')
   const [genres, setGenres] = useState<Genre[]>([])
   const [muted, setMuted] = useState(true)
-
+  const movieAvg = movie!.vote_average * 10
   console.log(movie)
   
   useEffect(() => {
@@ -96,7 +96,7 @@ function Modal() {
           <div className="space-y-6 text-lg">
             <div className="flex items-center space-x-2 text-sm">
               <p className="font-semibold text-green-400">
-                {movie!.vote_average * 10}% Match
+                {Math.floor (movieAvg)}% Match
               </p>
               <p className="font-light">
                 {movie?.release_date || movie?.first_air_date}
